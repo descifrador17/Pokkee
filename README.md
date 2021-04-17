@@ -1,5 +1,5 @@
 # Pokkee iOS App
-![PokkeeMainScreen](https://user-images.githubusercontent.com/35165993/115124457-f90f8780-9fdf-11eb-814f-57aa9e018bfb.png =250x) ![pokemonDetails](https://user-images.githubusercontent.com/35165993/115124451-f4e36a00-9fdf-11eb-872a-1343f0d34240.png =250x) 
+![PokkeeMainScreen](https://user-images.githubusercontent.com/35165993/115124457-f90f8780-9fdf-11eb-814f-57aa9e018bfb.png) ![pokemonDetails](https://user-images.githubusercontent.com/35165993/115124451-f4e36a00-9fdf-11eb-872a-1343f0d34240.png) 
 ## About the App
 Its a simple iOS App made using Swift and Storyboards in XCode. It uses the h [PokeApi](https://pokeapi.co) to fetch the data of Pokemons and display them. This app was made as an effort to learn about various concepts of iOS Development. Some of the core features I learnt during the development of this App were:
 
