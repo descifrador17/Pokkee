@@ -7,34 +7,34 @@
 
 import Foundation
 
-struct PokemonDetails{
-    var abilities : [Abilities]
-    var height : Int
-    var id : Int
-    var name : String
-    var stats : [Stats]
-    var weight : Int
+struct PokemonDetails : Codable{
+    var abilities : [Abilities]?
+    var height : Int?
+    var id : Int?
+    var name : String?
+    var stats : [Stats]?
+    var weight : Int?
 }
 
-struct Abilities{
-    var ability : Ability
-    var isHidden : Bool
-    var slot : Int
+struct Abilities : Codable{
+    var ability : Ability?
+    var isHidden : Bool?
+    var slot : Int?
 }
 
-struct Ability{
-    var name : String
-    var url : String
+struct Ability : Codable{
+    var name : String?
+    var url : String?
 }
 
-struct Stats{
-    var base_stat : Int
-    var stat : Stat
+struct Stats : Codable{
+    var base_stat : Int?
+    var stat : Stat?
 }
 
-struct Stat{
-    var name : String
-    var url : String
+struct Stat : Codable{
+    var name : String?
+    var url : String?
 }
 
 /*
