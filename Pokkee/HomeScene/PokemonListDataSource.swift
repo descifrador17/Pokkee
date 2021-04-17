@@ -18,7 +18,7 @@ final class PokemonListDataSource : NSObject, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let data = data else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row].name
+        cell.textLabel?.text = data[indexPath.row].name?.capitalized
         return cell
     }
     

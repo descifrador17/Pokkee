@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
     
     //MARK: setup UI
     func setupUI(){
-        title = "Pokemon Database"
+        title = "Pokkee"
         pokemonsTable.dataSource = pokemonListDataSource
         pokemonsTable.delegate = self
     }
@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PokemonDetailsViewController{
             vc.titleVC = selectedPokemon.capitalized
-            vc.pokemonUrl = "https://pokeapi.co/api/v2/pokemon/\(selectedPokemon)"
+            vc.pokemonUrl = "https://pokeapi.co/api/v2/pokemon/\(selectedPokemon.lowercased())"
         }
     }
 }
