@@ -14,6 +14,7 @@ struct PokemonDetails : Codable{
     var name : String?
     var stats : [Stats]?
     var weight : Int?
+    var sprites : Sprites?
 }
 
 struct Abilities : Codable{
@@ -37,6 +38,10 @@ struct Stat : Codable{
     var url : String?
 }
 
+struct Sprites : Codable {
+    var front_default : String?
+    var front_shiny : String?
+}
 /*
  
  JSON

@@ -19,6 +19,10 @@ class PokemonDetailsViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var frontDefaultImageView: UIImageView!
+    
+    @IBOutlet weak var frontShinyImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +44,12 @@ class PokemonDetailsViewController: UIViewController {
             strongSelf.pokemonDetailsDataSource.pokemonDetails = result
             strongSelf.pokemonDetailsDataSource.loadSectionValues()
             strongSelf.detailsTable.reloadData()
+            NetworkingApi().loadImage(from: result.sprites!.front_default!, completionHandler: {[weak self] fetchedImage in
+                self?.frontDefaultImageView.image = fetchedImage
+            })
+            NetworkingApi().loadImage(from: result.sprites!.front_shiny!, completionHandler: {[weak self] fetchedImage in
+                self?.frontShinyImageView.image = fetchedImage
+            })
             strongSelf.activityIndicator.stopAnimating()
             strongSelf.detailsTable.isHidden = false
             print(result)

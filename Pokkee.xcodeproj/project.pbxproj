@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E7E3BD2262B564300068DDC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E3BD1262B564300068DDC /* Constants.swift */; };
 		6EE03F48262AE6CF009C8A82 /* NetworkingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE03F47262AE6CF009C8A82 /* NetworkingApi.swift */; };
 		6EE03F4C262AFBA9009C8A82 /* PokemonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE03F4B262AFBA9009C8A82 /* PokemonDetailsViewController.swift */; };
 		6EE03F50262B38EC009C8A82 /* PokemonDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE03F4F262B38EC009C8A82 /* PokemonDetailsDataSource.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E7E3BD1262B564300068DDC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6EE03F47262AE6CF009C8A82 /* NetworkingApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingApi.swift; sourceTree = "<group>"; };
 		6EE03F4B262AFBA9009C8A82 /* PokemonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewController.swift; sourceTree = "<group>"; };
 		6EE03F4F262B38EC009C8A82 /* PokemonDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsDataSource.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				6EE9CC0E26293471005ECA0E /* Assets.xcassets */,
+				6E7E3BD1262B564300068DDC /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				6EE9CC2D26293F68005ECA0E /* PokemonDetails.swift in Sources */,
 				6EE9CC2526293CE9005ECA0E /* PokemonListDataSource.swift in Sources */,
 				6EE03F48262AE6CF009C8A82 /* NetworkingApi.swift in Sources */,
+				6E7E3BD2262B564300068DDC /* Constants.swift in Sources */,
 				6EE9CC1F2629352B005ECA0E /* HomeViewController.swift in Sources */,
 				6EE03F50262B38EC009C8A82 /* PokemonDetailsDataSource.swift in Sources */,
 				6EE9CC2926293D71005ECA0E /* PokemonList.swift in Sources */,

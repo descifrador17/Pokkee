@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? PokemonDetailsViewController{
             vc.titleVC = selectedPokemon.capitalized
-            vc.pokemonUrl = "https://pokeapi.co/api/v2/pokemon/\(selectedPokemon.lowercased())"
+            vc.pokemonUrl = "\(BASE_URL)pokemon/\(selectedPokemon.lowercased())"
         }
     }
 }

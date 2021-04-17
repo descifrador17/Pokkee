@@ -5,7 +5,7 @@
 //  Created by Dayal, Utkarsh on 17/04/21.
 //
 
-import Foundation
+import UIKit
 
 protocol NetworkingService  {
     @discardableResult func getPokemonsList(completionHandler : @escaping (PokemonList) -> ()) -> URLSessionDataTask
@@ -13,6 +13,9 @@ protocol NetworkingService  {
     @discardableResult func getPokemonDetails(from url : String, completionHandler : @escaping (PokemonDetails)->()) -> URLSessionDataTask
 
     @discardableResult func getmorePokemons(from url : String, completionHandler : @escaping (PokemonList) -> ()) -> URLSessionDataTask
+    
+    @discardableResult func loadImage(from url : String, completionHandler : @escaping (UIImage) -> ()) -> URLSessionDataTask
+    
 }
 
 final class NetworkingApi : NetworkingService{
@@ -21,7 +24,7 @@ final class NetworkingApi : NetworkingService{
     
     @discardableResult
     func getPokemonsList(completionHandler: @escaping (PokemonList) -> ()) -> URLSessionDataTask {
-        let request = URLRequest(url: URL(string: "https://pokeapi.co/api/v2/pokemon")!)
+        let request = URLRequest(url: URL(string: "\(BASE_URL)pokemon")!)
         let task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error{
@@ -100,5 +103,33 @@ final class NetworkingApi : NetworkingService{
         task.resume()
         return task
     }
+    
+    @discardableResult
+    func loadImage(from url : String, completionHandler : @escaping (UIImage) -> ()) -> URLSessionDataTask{
+        let request = URLRequest(url: URL(string: url)!)
+        let task = session.dataTask(with: request){data, response, error in
+            DispatchQueue.main.async {
+                if let error = error{
+                    print("Error getting data \(error)")
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else{
+                    print("Unfavourable Response")
+                    return
+                }
+                
+                guard let data = data,
+                      let result = UIImage(data: data) else{
+                    print("Error parsing JSON")
+                    return
+                }
+                completionHandler(result)
+            }
+        }
+        task.resume()
+        return task
+    }
+    
     
 }
